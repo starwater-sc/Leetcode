@@ -1,0 +1,19 @@
+1. Given function guess(mid), 0 means correct, 1 means guess(mid) is smaller than target, -1 means guess(mid) is larger than target
+2. Again, set range from left to right
+3. while loop, ends when right > left
+4. use mid point as guess, run guess(mid) for results.
+
+```
+let guessNumber = function(n) {
+    let left = 1,
+        right = n
+
+    while(left<=right){
+        let mid = Math.trunc((left+right)/2);
+        let res = guess(mid);
+        if(res==0) return mid;
+        else if(res==1) left = mid+1;
+        else right = mid-1;
+    }
+};
+```
